@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demo Anniversary | NARA STUDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=DM+Sans&display=swap" rel="stylesheet"><link rel="stylesheet" href="../demo.css"></head>
+<body><main><p>Untuk: <span data-nara="to">Nama Kamu</span> 💕</p><h1>Happy Anniversary!</h1><p>Kita sudah bersama selama</p><div class="big" id="d">0</div><p>hari ✨</p>
+<div class="note" style="--r:-1.5deg"><small>14 Feb</small><br>Hari pertama kita bertemu 🌷</div>
+<div class="note" style="--r:1.2deg"><small>Suatu sore</small><br>Pertama kali jalan berdua 🍓</div>
+<div class="note" style="--r:-1deg"><small>Hari ini</small><br>Masih bersama, masih bahagia 💗</div>
+<button id="b">Buka surat cinta 💌</button>
+<div class="note" id="l" hidden>Untuk <span data-nara="to">Nama Kamu</span>,<br><span data-nara="msg">Ini teks demo. Pesan personalmu akan tampil di sini.</span></div></main>
+<span class="o" style="left:5%;top:15%">💕</span><span class="o" style="left:90%;top:30%;animation-delay:-1s">🎀</span><span class="o" style="left:8%;top:70%;animation-delay:-2s">🌷</span><span class="o" style="left:88%;top:80%;animation-delay:-.5s">✨</span>
+<script>const T=Math.floor((Date.now()-new Date("2024-02-14"))/864e5),d=document.getElementById("d");let n=0;const iv=setInterval(()=>{n+=Math.ceil(T/40);if(n>=T){n=T;clearInterval(iv)}d.textContent=n},30);
+document.getElementById("b").onclick=e=>{document.getElementById("l").hidden=false;e.target.hidden=true}</script>
+<script src="../nara-editor.js"></script></body></html>

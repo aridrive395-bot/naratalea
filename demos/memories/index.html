@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>A Little Book of Memories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bungee&family=Playfair+Display:ital,wght@1,700&family=Reenie+Beanie&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== PAPAN GABUS: semua barang menempel di sini. Seret barang atau geser papan. ===== -->
+<div id="layar"><div id="papan">
+  <svg id="tali" width="3000" height="2000" aria-hidden="true"></svg>
+
+  <!-- 1. Judul -->
+  <div class="item geser judul-kartu" id="t-judul" style="left:260px;top:230px;--r:-2deg"><i class="pin"></i><i class="washi w1"></i>
+    <p class="ketik">album kenangan no. 01</p>
+    <p class="ketik besar">A Little Book of</p>
+    <div class="ransom" data-teks="MEMORIES"></div>
+    <!-- GANTI: tanggal -->
+    <p class="tulis tgl">21 November 2026</p>
+  </div>
+
+  <!-- 2. Pesan pembuka -->
+  <div class="item geser kartu-intro" id="t-intro" style="left:930px;top:250px;--r:2deg"><i class="pin"></i><i class="klip"></i>
+    <!-- GANTI: pesan pembuka -->
+    <p class="tulis"><b>Hai, Nama.</b> Kalau kamu sedang membaca ini, berarti aku akhirnya berani menyelesaikannya. Ini bukan permintaan apa-apa. Hanya papan kecil untuk menyimpan hal-hal baik yang pernah ada di antara kita.foto foto berikutnya jangan lupa di click yaa</p>
+  </div>
+
+  <!-- 3. Foto-foto: ketuk untuk membalik. GANTI caption, tanggal, dan catatan belakang -->
+  <figure class="item geser pl" id="p1" data-aksi="balik" style="left:1480px;top:200px;--r:-6deg"><i class="pin"></i><div class="pl-in">
+    <div class="muka"><div class="foto" data-nama="assets/images/foto1.jpg"><img src="assets/images/foto1.jpg" alt="Kenangan 1"></div><figcaption>Hari pertama kita jalan<small>12.03.2022</small></figcaption></div>
+    <div class="punggung"><p class="tulis">Aku gugup sepanjang jalan, tapi kamu tertawa.</p></div></div></figure>
+  <figure class="item geser pl" id="p2" data-aksi="balik" style="left:1730px;top:330px;--r:5deg"><i class="pin"></i><div class="pl-in">
+    <div class="muka"><div class="foto" data-nama="assets/images/foto2.jpg"><img src="assets/images/foto2.jpg" alt="Kenangan 2"></div><figcaption>Makan malam kelamaan<small>02.06.2022</small></figcaption></div>
+    <div class="punggung"><p class="tulis">Restorannya hampir tutup, kita masih bercerita.</p></div></div></figure>
+  <figure class="item geser pl" id="p3" data-aksi="balik" style="left:1560px;top:560px;--r:-2deg"><i class="pin"></i><div class="pl-in">
+    <div class="muka"><div class="foto" data-nama="assets/images/foto3.jpg"><img src="assets/images/foto3.jpg" alt="Kenangan 3"></div><figcaption>Hujan dan es krim<small>20.08.2022</small></figcaption></div>
+    <div class="punggung"><p class="tulis">Es krimnya mencair. Kita tidak peduli.</p></div></div></figure>
+
+  <!-- 4. Koran -->
+  <div class="item geser koran" id="t-koran" style="left:2150px;top:180px;--r:1.5deg"><i class="pin"></i>
+    <div class="kepala">HARIAN KENANGAN</div><div class="garis-k">Edisi Spesial · Terbit sekali saja</div>
+    <h3>HUJAN YANG TIDAK INGIN BERHENTI</h3>
+    <div class="kolom"><div class="foto" data-nama="assets/images/foto3.jpg"><img src="assets/images/foto3.jpg" alt="Hujan"></div>
+      <p>Dua orang berteduh selama berjam-jam di bawah atap halte. Saksi mata menyebut tak seorang pun dari mereka tampak ingin hujan segera reda.</p>
+      <p>"Aku tidak ingin hujannya berhenti," kata salah satunya, pelan.</p></div>
+  </div>
+
+  <!-- 5. Photobooth & tiket -->
+  <div class="item geser strip" id="t-strip" style="left:2470px;top:760px;--r:3deg"><i class="pin"></i>
+    <div class="bingkai"><div class="foto" data-nama="assets/images/foto1.jpg" style="--k:0"><img src="assets/images/foto1.jpg" alt=""></div>
+    <div class="foto" data-nama="assets/images/foto2.jpg" style="--k:1"><img src="assets/images/foto2.jpg" alt=""></div>
+    <div class="foto" data-nama="assets/images/foto4.jpg" style="--k:2"><img src="assets/images/foto4.jpg" alt=""></div>
+    <div class="foto" data-nama="assets/images/foto6.jpg" style="--k:3"><img src="assets/images/foto6.jpg" alt=""></div></div>
+    <button class="jepret" data-aksi="jepret" type="button">JEPRET ●</button>
+  </div>
+  <div class="item geser tiket" id="t-tiket" style="left:2150px;top:830px;--r:-8deg"><i class="pin"></i>
+    <div><b>ADMIT ONE</b><span>12.03.2022 · BARIS A · KURSI 12</span></div><div class="t2"><b>ADMIT ONE</b><span>BIOSKOP KECIL · 20.30</span></div>
+  </div>
+
+  <!-- 6. Kaset: ketuk untuk memutar lagu -->
+  <div class="item geser kaset" id="t-kaset" data-aksi="kaset" style="left:1700px;top:930px;--r:-3deg"><i class="pin"></i>
+    <div class="label-kaset"><p class="tulis">LAGU BUAT KAMU · Side A</p><div class="jendela"><i class="reel"></i><i class="reel"></i></div></div>
+    <p class="kecil">ketuk untuk memutar ▶</p>
+  </div>
+
+  <!-- 7. Peta -->
+  <div class="item geser peta" id="t-peta" style="left:1100px;top:880px;--r:1.5deg"><i class="pin"></i>
+    <svg viewBox="0 0 520 380" width="520" height="380">
+      <rect width="520" height="380" fill="#e6d3a8"/><path d="M173 0V380M347 0V380M0 127H520M0 253H520" stroke="#00000014" stroke-width="2"/>
+      <path d="M0 300C90 280 130 330 230 310S380 240 520 270V380H0Z" fill="#a9c9c0" opacity=".55"/>
+      <defs><mask id="mk"><path id="mkp" d="M70 90C150 40 210 140 270 110S380 40 440 120S400 250 330 270S150 300 100 250" fill="none" stroke="#fff" stroke-width="14" pathLength="100"/></mask></defs><path d="M70 90C150 40 210 140 270 110S380 40 440 120S400 250 330 270S150 300 100 250" fill="none" stroke="#c0392b" stroke-width="5" stroke-dasharray="0.1 13" stroke-linecap="round" mask="url(#mk)"/>
+      <g class="titik"><circle cx="70" cy="90" r="9"/><circle cx="270" cy="110" r="9"/><circle cx="440" cy="120" r="9"/><circle cx="330" cy="270" r="9"/><circle cx="100" cy="250" r="9"/></g>
+      <g class="nama" font-size="26"><text x="40" y="62">Toko buku</text><text x="244" y="86">Kafe</text><text x="392" y="98">Taman</text><text x="340" y="304">Halte</text><text x="66" y="290">Rumahmu</text></g>
+      <text x="16" y="364" class="kecil-peta">PETA TEMPAT KITA · tidak sesuai skala</text>
+    </svg>
+  </div>
+
+  <!-- 8. Catatan tempel. GANTI isinya -->
+  <div class="item geser nota" id="n1" style="left:300px;top:860px;--r:-5deg;--w:#f4d35e"><i class="pin"></i><p class="tulis">jangan lupa makan ya</p></div>
+  <div class="item geser nota" id="n2" style="left:540px;top:930px;--r:4deg;--w:#f08bb0"><i class="pin"></i><p class="tulis">kopinya terlalu pahit, tapi tetap dihabiskan</p></div>
+  <div class="item geser nota" id="n3" style="left:320px;top:1110px;--r:3deg;--w:#9ad9b4"><i class="pin"></i><p class="tulis">lagu itu lagi?</p></div>
+  <div class="item geser nota" id="n4" style="left:570px;top:1170px;--r:-3deg;--w:#8fb4f0"><i class="pin"></i><p class="tulis">hujan = alasan berteduh bareng</p></div>
+
+  <!-- 9. Amplop surat -->
+  <div class="item geser amplop" id="t-amplop" data-aksi="surat" style="left:330px;top:1520px;--r:-3deg"><i class="pin"></i>
+    <div class="segel">♥</div><p class="tulis">untuk: Nama</p><p class="kecil">ketuk untuk membuka ✉</p>
+  </div>
+
+  <!-- 10. Terima kasih -->
+  <div class="item geser terima" id="t-terima" style="left:920px;top:1560px;--r:1deg"><i class="pin"></i><i class="washi w2"></i>
+    <div class="ransom" data-teks="TERIMA KASIH"></div>
+    <p class="tulis">untuk tawa, cerita, sabar, dan kenangan yang tetap baik.</p>
+  </div>
+
+  <!-- 11. Halaman terakhir -->
+  <div class="item geser akhir" id="t-akhir" style="left:1900px;top:1440px;--r:-2deg"><i class="pin"></i><i class="klip"></i>
+    <svg class="bunga" viewBox="0 0 60 120"><path d="M30 118C28 80 34 50 30 18" stroke="#5a6b3a" stroke-width="2.5" fill="none"/><ellipse cx="20" cy="80" rx="11" ry="4.5" transform="rotate(-35 20 80)" fill="#7e9a52"/><ellipse cx="41" cy="62" rx="11" ry="4.5" transform="rotate(35 41 62)" fill="#7e9a52"/><g fill="#e63946"><circle cx="30" cy="14" r="9"/><circle cx="19" cy="27" r="7"/><circle cx="41" cy="31" r="7"/></g><g fill="#f4d35e"><circle cx="30" cy="14" r="3.5"/><circle cx="19" cy="27" r="2.8"/><circle cx="41" cy="31" r="2.8"/></g></svg>
+    <p class="tulis kalimat">Semoga kamu selalu baik-baik saja, di mana pun kamu berada.</p>
+    <p class="selesai">That's all for now.</p>
+    <div class="cap">FIN.</div>
+    <button class="ulang" data-aksi="awal" type="button">mulai dari awal</button>
+  </div>
+
+  <!-- hiasan -->
+  <div class="item geser hias" style="left:880px;top:640px;--r:-12deg;font-size:70px">⭐</div>
+  <div class="item geser hias" style="left:1290px;top:560px;--r:8deg;font-size:80px">🎀</div>
+  <div class="item geser hias" style="left:2300px;top:640px;--r:-6deg;font-size:70px">🌸</div>
+  <div class="item geser hias tulis-hias" style="left:760px;top:700px;--r:-8deg">ini kita →</div>
+  <div class="item geser hias" style="left:1560px;top:1400px;--r:10deg;font-size:76px">☁️</div>
+  <div class="item geser hias" style="left:2500px;top:1500px;--r:-10deg;font-size:76px">✨</div>
+  <div class="item geser hias tulis-hias" style="left:2380px;top:1200px;--r:5deg">jepret dulu ↑</div>
+</div></div>
+
+<!-- ===== Sampul: sobek untuk membuka ===== -->
+<div id="sampul">
+  <p class="ketik kecil">Web testing ari</p>
+  <p class="ketik besar">A Little Book of</p>
+  <div class="ransom ransom-besar" data-teks="MEMORIES"></div>
+  <p class="tulis tgl">21 November 2026</p>
+  <button id="bukaSurat" type="button">Open This Letter</button>
+</div>
+
+<!-- ===== Kontrol ===== -->
+<header id="atas"><span class="label-atas">memory book · <b id="penanda">1 / 11</b></span>
+  <button class="bt lebar" id="musik" type="button" aria-label="Putar musik"><span>♪</span><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button></header>
+<footer id="hud">
+  <button class="bt" id="prev" type="button" aria-label="Sebelumnya">‹</button>
+  <div id="info"><b id="no">01</b><span id="nama"></span></div>
+  <button class="bt" id="next" type="button" aria-label="Berikutnya">›</button>
+</footer>
+<div id="alat">
+  <button id="semua" type="button">▦ Semua</button><button id="zm" type="button" aria-label="Perbesar">＋</button><button id="zk" type="button" aria-label="Perkecil">－</button><button id="btnStiker" type="button">★ Stiker</button>
+</div>
+<div id="nampan" hidden>
+  <button data-s="❤️">❤️</button><button data-s="⭐">⭐</button><button data-s="🌸">🌸</button><button data-s="🦋">🦋</button><button data-s="🍒">🍒</button><button data-s="🎈">🎈</button><button id="hapusS">🗑 hapus</button>
+</div>
+<p id="hintStiker" hidden>ketuk papan untuk menempel stiker</p>
+
+<!-- ===== Surat (muncul saat amplop diketuk). GANTI isinya ===== -->
+<div id="modal"><div class="kertas-surat">
+  <button class="x" id="tutupSurat" type="button" aria-label="Tutup">×</button>
+  <div id="isiSurat"></div>
+</div></div>
+<div id="teksSurat" hidden>
+  <p>Untuk (nama),</p>
+  <p>Aku tidak tahu kapan surat ini sampai padamu, atau apakah kamu akan membacanya sampai habis. Tidak apa-apa. Aku menulisnya supaya semuanya terasa selesai dengan baik.</p>
+  <p>Banyak hal yang ingin kusampaikan, tapi aku memilih yang paling jujur: aku bersyukur pernah mengenalmu. Kamu mengajariku tentang sabar, tentang berani, dan tentang menikmati hari yang biasa-biasa saja.</p>
+  <p>Kalau ada hal yang dulu kurang baik dariku, aku minta maaf. Dan kalau ada hal baik yang tersisa, semoga itu cukup untuk dikenang tanpa rasa berat.</p>
+  <p>Aku harap kamu bahagia, dikelilingi orang-orang yang menyayangimu, dan selalu punya alasan untuk tersenyum.</p>
+  <p>Dengan hangat,<br>Namamu</p>
+</div>
+<div id="flash"></div>
+
+<!-- Suara latar: mulai saat sampul dibuka. Ganti file di assets/music/lagu.mp3 -->
+<audio id="lagu" src="assets/music/lagu.mp3" loop preload="auto"></audio>
+<!-- Suara radio/kaset: hanya bunyi saat gambar kaset diketuk. Ganti file di assets/music/radio.mp3 -->
+<audio id="radio" src="assets/music/radio.mp3" loop preload="auto"></audio>
+<script src="script.js"></script>
+<script src="../nara-editor.js" data-photos="assets/images/foto1.jpg,assets/images/foto2.jpg,assets/images/foto3.jpg,assets/images/foto4.jpg,assets/images/foto5.jpg,assets/images/foto6.jpg"></script></body>
+</html>

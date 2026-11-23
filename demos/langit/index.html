@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070b1a">
+<title>Langit yang Sama</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Italiana&family=Parisienne&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="nebula"></div>
+<canvas id="langit"></canvas>
+
+<main id="app">
+  <!-- 0. Gerbang: tahan untuk membuka -->
+  <section class="adegan aktif" id="a0">
+    <p class="kecil m" style="--i:0">sebuah surat yang ditulis pada langit malam</p>
+    <h1 class="judul m" id="jdl" style="--i:1"></h1>
+    <button id="tahan" class="m" style="--i:2" type="button" aria-label="Tahan untuk membuka">
+      <svg viewBox="0 0 120 120"><circle class="dasar" cx="60" cy="60" r="54"/><circle class="isi" id="prog" cx="60" cy="60" r="54"/></svg><span>tahan</span>
+    </button>
+    <p class="kecil m" id="petunjuk" style="--i:3">tahan, jangan dilepas dulu</p>
+  </section>
+
+  <!-- 1. Prolog -->
+  <section class="adegan" id="a1" data-syarat="biarkan kalimatnya muncul pelan-pelan"><div id="prolog"></div></section>
+
+  <!-- 2. Rasi bintang kenangan -->
+  <section class="adegan" id="a2" data-syarat="temukan semua bintang untuk melanjutkan">
+    <h2 class="judul kecilj m" style="--i:0">Rasi Bintang Kenangan</h2>
+    <p class="kecil m" style="--i:1">ketuk bintang yang berkedip</p>
+    <div class="peta m" id="peta" style="--i:2"><svg id="garis" viewBox="0 0 100 100" preserveAspectRatio="none"></svg></div>
+    <p class="kecil" id="hitung"></p>
+  </section>
+
+  <!-- 3. Fase bulan -->
+  <section class="adegan" id="a3" data-syarat="geser sampai purnama terakhir">
+    <h2 class="judul kecilj m" style="--i:0">Fase Bulan</h2>
+    <div class="bulan m" style="--i:1"><i class="bayang" id="bayang"></i></div>
+    <div class="m" style="--i:2"><p class="nama-fase" id="fnama"></p><p class="kecil" id="ftgl"></p><p class="teks-fase" id="fteks"></p></div>
+    <input class="m" style="--i:3" id="fase" type="range" min="0" max="7" value="0" aria-label="Geser fase bulan">
+  </section>
+
+  <!-- 4. Harapan -->
+  <section class="adegan" id="a4" data-syarat="terbangkan satu harapan">
+    <h2 class="judul kecilj m" style="--i:0">Lentera Harapan</h2>
+    <p class="kecil m" style="--i:1">tulis satu harapan, lalu biarkan terbang ke langit</p>
+    <textarea class="m kaca" style="--i:2" id="harap" maxlength="90" rows="3" placeholder="semoga..."></textarea>
+    <button class="tbl m" style="--i:3" id="terbang" type="button">Terbangkan ✦</button>
+    <p class="kecil" id="harapInfo"></p>
+  </section>
+
+  <!-- 5. Surat -->
+  <section class="adegan" id="a5" data-syarat="baca suratnya sampai selesai"><article id="surat" class="kaca"></article></section>
+
+  <!-- 6. Terima kasih -->
+  <section class="adegan" id="a6" data-syarat="pecahkan semua kata yang melayang">
+    <h2 class="judul kecilj m" style="--i:0">Terima Kasih</h2>
+    <div class="awan m" id="awan" style="--i:1"></div>
+    <p class="pesan-terima" id="pesanTerima">ketuk kata yang melayang</p>
+    <p class="kecil" id="hitungKata"></p>
+  </section>
+
+  <!-- 7. Penutup -->
+  <section class="adegan" id="a7">
+    <div class="bulan besar m" style="--i:0"></div>
+    <p class="kalimat m" id="akhirTeks" style="--i:1"></p>
+    <h2 class="judul akhir m" style="--i:3">That's all for now.</h2>
+    <button class="tbl m" style="--i:4" id="ulang" type="button">Lihat langitnya lagi</button>
+    <p class="kecil m" style="--i:4">ketuk di mana saja untuk kembang api</p>
+  </section>
+</main>
+
+<p id="syarat"></p>
+<nav id="nav">
+  <button class="bt" id="prev" type="button" aria-label="Kembali">‹</button>
+  <div id="titik" aria-hidden="true"></div>
+  <button class="bt" id="next" type="button" aria-label="Lanjut">›</button>
+</nav>
+<button id="lewati" type="button" hidden>lewati ›</button>
+<button class="bt lebar" id="musik" type="button" aria-label="Putar musik" hidden><span class="not">♪</span><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+
+<div id="mem"><div class="kaca">
+  <button class="x" id="tutupMem" type="button" aria-label="Tutup">×</button>
+  <div class="foto" id="memFoto"></div>
+  <p class="kecil" id="memTgl"></p><h3 id="memJudul"></h3><p id="memTeks"></p>
+</div></div>
+
+<audio id="lagu" src="assets/music/lagu.mp3" loop preload="auto"></audio>
+<script src="script.js"></script>
+<script src="../nara-editor.js" data-photos="assets/images/foto1.jpg,assets/images/foto2.jpg,assets/images/foto3.jpg,assets/images/foto4.jpg,assets/images/foto5.jpg,assets/images/foto6.jpg"></script></body>
+</html>
